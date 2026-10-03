@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><title>Websource Précommandes (WordPress) — Guide utilisateur</title>
+<style>
+body{font-family:"DejaVu Sans",Arial,sans-serif;font-size:10.5pt;line-height:1.5;color:#1f2937}
+h1{font-size:26pt;margin:0 0 6pt;color:#e8590c}
+h2{font-size:15pt;margin:22pt 0 6pt;padding-bottom:3pt;border-bottom:2px solid #e8590c;color:#111827;page-break-after:avoid}
+h3{font-size:11.5pt;margin:12pt 0 3pt;color:#111827;page-break-after:avoid}
+.cover{padding:60pt 0 30pt;border-bottom:4px solid #e8590c;margin-bottom:20pt}
+.cover p{font-size:12pt;color:#4b5563}
+table{border-collapse:collapse;width:100%;margin:6pt 0 10pt}
+tr{page-break-inside:avoid}
+th,td{border:1px solid #d1d5db;padding:4pt 6pt;text-align:left;vertical-align:top;font-size:9.5pt}
+th{background:#fff7ed}
+code{font-family:"DejaVu Sans Mono",monospace;font-size:9pt;background:#f3f4f6;padding:0 3pt}
+pre{background:#f3f4f6;padding:7pt;font-size:8.8pt;white-space:pre-wrap;word-break:break-all}
+.note{background:#eff6ff;border-left:4px solid #3b82f6;padding:6pt 9pt;margin:8pt 0}
+.warn{background:#fef2f2;border-left:4px solid #ef4444;padding:6pt 9pt;margin:8pt 0}
+ol,ul{margin:3pt 0 6pt 16pt;padding:0}
+.pb{page-break-before:always}
+figure{margin:8pt 0;page-break-inside:avoid;text-align:center}
+figure img{max-width:100%;border:1px solid #d1d5db}
+figcaption{font-size:8.5pt;color:#6b7280;margin-top:2pt}
+</style></head><body>
+
+<div class="cover">
+<h1>Websource Précommandes</h1>
+<p><strong>Guide utilisateur</strong> — plugin WordPress / WooCommerce version 1.0.0<br>
+Compatible WordPress 6.0+, WooCommerce 7.0+ · thèmes de blocs et thèmes classiques</p>
+<p>Websource · www.websource.fr</p>
+</div>
+
+<h2>Sommaire</h2>
+<ol>
+<li>Présentation et principe de fonctionnement</li>
+<li>Installation</li>
+<li>Premiers pas en 5 minutes</li>
+<li>Créer une précommande, champ par champ</li>
+<li>Cycle de vie d'une précommande</li>
+<li>Ce que voit le client</li>
+<li>Le compte à rebours</li>
+<li>Couleurs et libellés</li>
+<li>Produit à la une et bandeau défilant</li>
+<li>Blocs connexion, inscription, mot de passe perdu</li>
+<li>La page « Toutes les précommandes »</li>
+<li>Alertes e-mail : inscription et abonnés</li>
+<li>Tâche planifiée, cron serveur et récapitulatif périodique</li>
+<li>E-mails personnalisés et variables</li>
+<li>Suivre les réservations</li>
+<li>Compatibilité thèmes, shortcodes, blocs et personnalisation avancée</li>
+<li>L'encart « accompagnement Websource »</li>
+<li>Questions fréquentes et dépannage</li>
+<li>Désinstallation et données</li>
+</ol>
+
+<h2>1. Présentation et principe de fonctionnement</h2>
+<p>Le plugin permet de vendre un produit <strong>avant sa sortie</strong>. Pour chaque produit (ou variation), vous créez une <em>règle de précommande</em> avec une date de sortie. Tant que la règle est <strong>en cours</strong> :</p>
+<ul>
+<li>le produit peut être commandé même s'il est en rupture : l'état d'origine (gestion du stock, précommandes autorisées, statut de stock) est mémorisé puis restauré à la clôture ;</li>
+<li>le prix de précommande éventuel est appliqué <em>dynamiquement</em> par les filtres de prix de WooCommerce : le prix enregistré sur le produit n'est jamais modifié ;</li>
+<li>le bouton d'achat devient « Précommander », un badge, la date de sortie et un compte à rebours s'affichent ;</li>
+<li>chaque ligne de commande concernée est enregistrée comme <strong>réservation</strong> (menu <em>Précommandes → Réservations</em>).</li>
+</ul>
+<p>À la date de sortie (ou à la fin que vous avez fixée), la règle se <strong>termine</strong> : le prix de précommande disparaît, le stock est restauré, et chaque client ayant précommandé reçoit l'e-mail « produit disponible ».</p>
+<div class="note">Le plugin ne gère pas le paiement d'un acompte puis d'un solde : la précommande est payée en totalité à la commande, comme une commande classique.</div>
+
+<h2>2. Installation</h2>
+<ol>
+<li>Installez et activez <strong>WooCommerce</strong>. Sans WooCommerce, le plugin affiche une notice et ne fait rien d'autre.</li>
+<li>Téléchargez <code>wp-websource-preorder.zip</code>, puis <em>Extensions → Ajouter → Téléverser un plugin</em> et installez-le. (Ou copiez le dossier <code>websource-preorder</code> dans <code>wp-content/plugins/</code>.)</li>
+<li>Activez le plugin. Le menu <em>Précommandes</em> apparaît dans l'administration (Précommandes, Réservations, Abonnés, Réglages).</li>
+<li>Ouvrez <em>Précommandes → Réglages</em> pour configurer le plugin.</li>
+<li>Recommandé : planifiez un vrai cron serveur (chapitre 13).</li>
+</ol>
+<p>Trois tables sont créées à l'activation (<code>wspo_rules</code>, <code>wspo_bookings</code>, <code>wspo_subscribers</code>, précédées du préfixe de votre base).</p>
+
+<h2>3. Premiers pas en 5 minutes</h2>
+<ol>
+<li><em>Précommandes → Nouvelle précommande</em>.</li>
+<li>Tapez le nom du produit dans le champ de recherche et choisissez-le.</li>
+<li>Renseignez la <strong>date de sortie</strong>. Laissez le reste par défaut.</li>
+<li>Enregistrez : le statut passe à <strong>En cours</strong>. Ouvrez la fiche produit sur la boutique : le bloc précommande est affiché.</li>
+</ol>
+<figure><img src="img/admin-regles.jpg"><figcaption>Écran Précommandes : indicateurs, liste des règles et encart « accompagnement Websource ».</figcaption></figure>
+
+<h2 class="pb">4. Créer une précommande, champ par champ</h2>
+<figure><img src="img/admin-regle-form.jpg"><figcaption>Formulaire d'une précommande.</figcaption></figure>
+<table>
+<tr><th style="width:30%">Champ</th><th>Rôle</th></tr>
+<tr><td>Produit / déclinaison</td><td>Un produit variable cible toutes ses déclinaisons ; une déclinaison précise a priorité sur la règle « toutes ». Une seule règle non terminée par produit / déclinaison.</td></tr>
+<tr><td>Activée</td><td>Une règle désactivée n'est jamais appliquée.</td></tr>
+<tr><td>Début des précommandes</td><td>Vide = dès l'activation. Sinon la règle reste « Programmée » jusqu'à cette date (heure du site).</td></tr>
+<tr><td>Date de sortie</td><td>Obligatoire. Affichée aux clients, alimente le compte à rebours et la barre de progression. L'e-mail « disponible » part à cette date.</td></tr>
+<tr><td>Clore automatiquement à la date de sortie</td><td>Oui (recommandé) : la précommande s'arrête à la sortie. Non : elle continue jusqu'à la fin anticipée ou jusqu'à ce que vous cliquiez sur « Disponible maintenant ».</td></tr>
+<tr><td>Fin anticipée</td><td>Optionnel. Clôture des ventes avant la sortie, sans e-mail « disponible » (le produit n'est pas encore sorti).</td></tr>
+<tr><td>Prix de précommande</td><td>Prix fixe, remise en pourcentage ou remise en montant, calculés à partir du <strong>prix normal</strong> du produit. Les montants sont saisis comme vos prix de catalogue (HT ou TTC selon votre réglage WooCommerce).</td></tr>
+<tr><td>Quota total</td><td>Nombre maximum d'unités précommandables. 0 = illimité. Les commandes annulées, remboursées ou échouées libèrent leur quota.</td></tr>
+<tr><td>Maximum par commande / par client</td><td>0 = illimité. Le maximum par client s'applique aux clients connectés (réservations déjà enregistrées + panier).</td></tr>
+<tr><td>Libellé personnalisé</td><td>Remplace le badge et le bouton pour cette précommande.</td></tr>
+<tr><td>Message</td><td>Texte affiché dans le bloc de la fiche produit.</td></tr>
+<tr><td>Afficher dans les listes</td><td>Page « Toutes les précommandes », bandeau, à la une, blocs de comptes et récapitulatif.</td></tr>
+</table>
+
+<h2>5. Cycle de vie d'une précommande</h2>
+<table>
+<tr><th style="width:22%">Statut</th><th>Signification</th></tr>
+<tr><td>Programmée</td><td>Activée mais pas encore ouverte (début dans le futur), ou désactivée. Aucun effet sur le produit.</td></tr>
+<tr><td>En cours</td><td>Prix de précommande appliqué, commande hors stock autorisée, bloc affiché.</td></tr>
+<tr><td>Terminée</td><td>Date de sortie ou fin atteinte, ou bouton « Disponible maintenant » : l'état d'origine du produit est restauré. Si la sortie est atteinte, les acheteurs sont prévenus.</td></tr>
+</table>
+<p>Les transitions sont appliquées par WP-Cron (toutes les 5 minutes) et à la première visite suivant l'échéance. Supprimer une règle en cours restaure immédiatement le produit.</p>
+<p>Le bouton <strong>« Disponible maintenant »</strong> fixe la date de sortie à l'instant présent, termine la règle et envoie l'e-mail « produit disponible ».</p>
+
+<h2 class="pb">6. Ce que voit le client</h2>
+<figure><img src="img/front-produit.jpg"><figcaption>Fiche produit : prix barré, bloc précommande, compte à rebours, quantité restante, bouton « Précommander ».</figcaption></figure>
+<ul>
+<li><strong>Fiche produit</strong> : badge, date de sortie, compte à rebours, barre de progression, quantité restante, message, bouton renommé (produit simple et variable ; pour une variation précise, le libellé change à la sélection).</li>
+<li><strong>Vignettes</strong> : badge sur les boucles de produits (thèmes classiques et bloc « Image du produit »).</li>
+<li><strong>Panier et commande</strong> : ligne « Précommande : sortie prévue le… » et notice, avec les blocs Panier / Commande comme avec les shortcodes.</li>
+<li><strong>Limites</strong> : si le quota ou un maximum est dépassé, l'ajout est refusé avec un message clair ; les quantités du panier en blocs sont plafonnées automatiquement.</li>
+<li><strong>Mon compte → Mes précommandes</strong> : liste des réservations du client et statut.</li>
+</ul>
+<figure><img src="img/front-panier.jpg"><figcaption>Panier en blocs : notice, prix de précommande et date de sortie.</figcaption></figure>
+<figure><img src="img/front-boucle.jpg"><figcaption>Badge sur les vignettes (page boutique).</figcaption></figure>
+
+<h2>7. Le compte à rebours</h2>
+<figure><img src="img/admin-reglages-counter.jpg"><figcaption>Réglages → Compteur.</figcaption></figure>
+<table>
+<tr><th style="width:30%">Mode</th><th>Affichage</th></tr>
+<tr><td>Automatique</td><td>Plus d'un jour : jours, heures, minutes. Moins d'un jour : heures, minutes, secondes. Moins d'une heure : minutes, secondes.</td></tr>
+<tr><td>Jours</td><td>Nombre de jours restants.</td></tr>
+<tr><td>Jours + heures</td><td></td></tr>
+<tr><td>Jours + heures + minutes</td><td></td></tr>
+<tr><td>Jours + heures + minutes + secondes</td><td>Mise à jour chaque seconde.</td></tr>
+</table>
+<p>Le compte à rebours se calcule dans le navigateur, avec l'heure du serveur comme référence (indépendant de l'horloge du visiteur). À zéro, il affiche « Disponible maintenant ! ». Vous pouvez aussi masquer le compte à rebours, la barre de progression ou la quantité restante.</p>
+
+<h2>8. Couleurs et libellés</h2>
+<figure><img src="img/admin-reglages-colors.jpg"><figcaption>Réglages → Couleurs.</figcaption></figure>
+<p>Neuf couleurs pilotent l'apparence via des variables CSS : principale, texte sur principale, fond du bloc, bordure du bloc, fond et texte du compteur, fond du badge, fond et texte du bandeau. Les libellés du badge et du bouton se règlent dans <em>Réglages → Général</em> (ou par précommande).</p>
+<figure><img src="img/admin-reglages-general.jpg"><figcaption>Réglages → Général : libellés, notice panier, mélange précommandes / stock, e-mails, conservation des données.</figcaption></figure>
+<p>L'option <strong>Mélange précommandes / produits en stock</strong> : « Interdit » empêche de mettre dans un même panier des précommandes et des produits normaux (message d'erreur à l'ajout et au paiement).</p>
+
+<h2>9. Produit à la une et bandeau défilant</h2>
+<figure><img src="img/admin-reglages-home.jpg"><figcaption>Réglages → Accueil &amp; bandeau.</figcaption></figure>
+<ul>
+<li><strong>À la une</strong> : la précommande qui sort le plus tôt, en haut de la page d'accueil (shortcode <code>[websource_preorder_featured]</code> et bloc pour un placement libre).</li>
+<li><strong>Bandeau défilant</strong> : emplacement au choix (tout en haut du site via <code>wp_body_open</code>, avant le pied de page, ou haut de l'accueil), pages concernées (toutes ou accueil), vitesse en pixels par seconde, nombre maximum de produits, texte d'introduction. Pause au survol ; si le visiteur demande « moins d'animations », le bandeau ne défile plus et s'affiche en liste.</li>
+</ul>
+<figure><img src="img/front-accueil.jpg"><figcaption>Accueil : bandeau, produit à la une et formulaire d'alerte.</figcaption></figure>
+<div class="note">Si votre thème n'appelle pas <code>wp_body_open</code>, le bandeau « tout en haut » est tout de même inséré en début de page par un petit script.</div>
+
+<h2>10. Blocs connexion, inscription, mot de passe perdu</h2>
+<figure><img src="img/admin-reglages-accounts.jpg"><figcaption>Réglages → Blocs comptes.</figcaption></figure>
+<p>Pour chacune des trois pages, activez ou non le bloc « prochains produits en précommande + formulaire d'alerte ». Il s'affiche sur la page <em>Mon compte</em> de WooCommerce <strong>et</strong> sur <code>wp-login.php</code> (connexion, inscription, mot de passe perdu). Sur Mon compte, connexion et inscription partagent la même page : le bloc n'y apparaît qu'une fois.</p>
+<figure><img src="img/front-connexion.jpg"><figcaption>Page de mot de passe perdu avec le bloc.</figcaption></figure>
+
+<h2>11. La page « Toutes les précommandes »</h2>
+<figure><img src="img/admin-reglages-list.jpg"><figcaption>Réglages → Page liste.</figcaption></figure>
+<p>Une vraie page WordPress est créée automatiquement avec le shortcode <code>[websource_preorders]</code>. Modifiez le slug et le titre dans les réglages : la page est mise à jour. Les produits sont groupés par mois de sortie (ou non groupés). Vous pouvez l'ajouter à vos menus ou utiliser le shortcode / bloc ailleurs.</p>
+<figure><img src="img/front-liste.jpg"><figcaption>Page liste.</figcaption></figure>
+
+<h2 class="pb">12. Alertes e-mail : inscription et abonnés</h2>
+<figure><img src="img/admin-reglages-alerts.jpg"><figcaption>Réglages → Alertes.</figcaption></figure>
+<p>Le formulaire se place, au choix : en pied de page, sur l'accueil, sur la fiche produit, dans la barre latérale gauche ou droite (thèmes classiques), via le widget « Alertes précommandes », le shortcode <code>[websource_preorder_subscribe]</code> ou le bloc.</p>
+<ul>
+<li><strong>Double opt-in</strong> : e-mail de confirmation avec lien ; sans confirmation, l'adresse ne reçoit rien.</li>
+<li><strong>RGPD</strong> : case de consentement obligatoire, texte modifiable.</li>
+<li><strong>Anti-spam</strong> : champ piège (honeypot), délai minimum de 3 secondes, nonce, limite de 8 demandes par heure et par adresse IP.</li>
+<li><strong>Désinscription en un clic</strong> depuis le lien de chaque récapitulatif.</li>
+</ul>
+<figure><img src="img/admin-abonnes.jpg"><figcaption>Précommandes → Abonnés : liste, ajout manuel, confirmation, suppression, export CSV.</figcaption></figure>
+
+<h2>13. Tâche planifiée, cron serveur et récapitulatif périodique</h2>
+<figure><img src="img/admin-reglages-cron.jpg"><figcaption>Réglages → Cron &amp; récapitulatif.</figcaption></figure>
+<p>Le récapitulatif envoie aux abonnés confirmés la liste des précommandes ouvertes, <em>x</em> fois par jour, semaine ou mois (ex. 2 fois par semaine = tous les 3,5 jours). Contenu : « toutes les précommandes ouvertes » ou « seulement les nouveautés depuis le dernier envoi ». <strong>Rien n'est envoyé s'il n'y a rien à annoncer.</strong> Les envois se font par lots de 100 avec reprise automatique au passage suivant.</p>
+<h3>WP-Cron</h3>
+<p>Un évènement interne tourne toutes les 5 minutes (mise à jour des états, e-mails de sortie, récapitulatif) à chaque visite du site.</p>
+<h3>Vrai cron serveur (recommandé)</h3>
+<ol>
+<li>Dans <code>wp-config.php</code> : <code>define( 'DISABLE_WP_CRON', true );</code></li>
+<li>Ajoutez à la crontab (l'adresse avec votre jeton est affichée dans l'onglet) :</li>
+</ol>
+<pre>*/5 * * * * curl -s "https://votre-site.tld/?wspo_cron=VOTRE_JETON" &gt; /dev/null</pre>
+<p>La réponse est du type <code>OK sync=0 digest=not_due sent=0</code>. Un mauvais jeton renvoie 403. Le bouton « Régénérer le jeton » invalide l'ancienne adresse ; « Envoyer le récapitulatif maintenant » force un envoi.</p>
+
+<h2 class="pb">14. E-mails personnalisés et variables</h2>
+<figure><img src="img/admin-reglages-emails.jpg"><figcaption>Réglages → E-mails.</figcaption></figure>
+<p>Cinq e-mails, personnalisables (objet + corps HTML) pour chaque locale du site. Laissez un champ vide pour revenir au texte par défaut (français, ou anglais pour les locales anglophones). L'enveloppe HTML reprend la couleur principale. Le bouton « Envoyer un test » envoie l'e-mail à votre adresse avec des données d'exemple.</p>
+<table>
+<tr><th style="width:32%">E-mail</th><th>Variables disponibles</th></tr>
+<tr><td>Commande de précommande (client)</td><td><code>{firstname}</code> <code>{lastname}</code> <code>{order_reference}</code> <code>{products_html}</code> <code>{release_info}</code> <code>{shop_name}</code> <code>{shop_url}</code> <code>{account_url}</code></td></tr>
+<tr><td>Produit disponible (client)</td><td><code>{firstname}</code> <code>{lastname}</code> <code>{order_reference}</code> <code>{product_name}</code> <code>{product_url}</code> <code>{release_date}</code> <code>{shop_name}</code> <code>{shop_url}</code> <code>{account_url}</code></td></tr>
+<tr><td>Nouvelle précommande (administrateur)</td><td><code>{customer}</code> <code>{customer_email}</code> <code>{order_reference}</code> <code>{products_html}</code> <code>{shop_name}</code></td></tr>
+<tr><td>Confirmation d'inscription</td><td><code>{confirm_url}</code> <code>{shop_name}</code> <code>{shop_url}</code></td></tr>
+<tr><td>Récapitulatif périodique</td><td><code>{products_html}</code> <code>{count}</code> <code>{unsubscribe_url}</code> <code>{shop_name}</code> <code>{shop_url}</code> <code>{list_url}</code></td></tr>
+</table>
+<p>Variables communes à tous les e-mails : <code>{shop_name}</code>, <code>{shop_url}</code>, <code>{account_url}</code>, <code>{list_url}</code>. Le HTML autorisé est filtré à l'enregistrement (pas de scripts).</p>
+
+<h2>15. Suivre les réservations</h2>
+<figure><img src="img/admin-reservations.jpg"><figcaption>Précommandes → Réservations.</figcaption></figure>
+<ul>
+<li>Filtrer par précommande, statut (actives / annulées) ou recherche (client, e-mail, n° de commande).</li>
+<li><strong>Exporter en CSV</strong> (séparateur « ; », encodage UTF-8) : le filtre courant est appliqué.</li>
+<li><strong>Renvoyer l'e-mail « disponible »</strong> pour une réservation.</li>
+<li><strong>Annuler</strong> une réservation : le quota est libéré (la commande WooCommerce n'est pas modifiée).</li>
+<li>Une commande annulée, remboursée ou échouée annule automatiquement ses réservations ; si elle est remise en traitement, elles sont réactivées.</li>
+</ul>
+
+<h2>16. Compatibilité thèmes, shortcodes, blocs et personnalisation avancée</h2>
+<ul>
+<li><strong>Thèmes de blocs</strong> (Twenty Twenty-Four / Five…) et <strong>thèmes classiques</strong> ; panier et commande classiques ou en blocs.</li>
+<li><strong>Shortcodes</strong> : <code>[websource_preorders]</code>, <code>[websource_preorder_featured]</code>, <code>[websource_preorder_ticker]</code>, <code>[websource_preorder_subscribe title="" text=""]</code>. Les mêmes éléments existent en <strong>blocs Gutenberg</strong> (catégorie Widgets).</li>
+<li><strong>Gabarits surchargeables</strong> : copiez <code>wp-content/plugins/websource-preorder/templates/&lt;nom&gt;.php</code> vers <code>wp-content/themes/votre-theme/websource-preorder/&lt;nom&gt;.php</code>. Gabarits : <code>product-box</code>, <code>ticker</code>, <code>featured</code>, <code>subscribe-form</code>, <code>list</code>, <code>account-block</code>, <code>my-preorders</code>.</li>
+<li><strong>CSS</strong> : classes préfixées <code>wspo-</code> et variables <code>--wspo-accent</code>, <code>--wspo-box-bg</code>… surchargeables dans votre thème.</li>
+<li><strong>Traduction</strong> : domaine <code>websource-preorder</code>, fichier <code>languages/websource-preorder.pot</code> ; chaînes en français par défaut.</li>
+</ul>
+
+<h2>17. L'encart « accompagnement Websource »</h2>
+<p>Sur l'écran principal <em>Précommandes</em>, les utilisateurs ayant le droit <code>manage_options</code> (administrateurs) voient un encart « Besoin d'aller plus loin ? » avec deux boutons, « Nous contacter » et « Prendre rendez-vous », qui ouvrent la page de contact de Websource dans un nouvel onglet.</p>
+<ul>
+<li>Visible <strong>uniquement dans l'administration</strong>, pour les administrateurs ; jamais côté boutique ni dans les e-mails ; une seule fois par page.</li>
+<li>Le bouton <strong>Masquer</strong> le cache pendant 30 jours pour votre compte utilisateur.</li>
+<li><strong>Aucune requête externe</strong> n'est effectuée par le plugin. Seul un clic sur un bouton transmet à Websource, dans l'adresse du lien, le nom du plugin, sa version, la version de WordPress et le domaine de votre site (paramètres <code>utm_*</code> et <code>ws_*</code>), pour faciliter la réponse.</li>
+</ul>
+
+<h2>18. Questions fréquentes et dépannage</h2>
+<table>
+<tr><th style="width:36%">Problème</th><th>Solution</th></tr>
+<tr><td>Le bloc précommande n'apparaît pas sur la fiche produit</td><td>Vérifiez que la précommande est <em>En cours</em> (liste) et que la date de début est passée. Videz les caches de page. Un thème qui n'appelle pas les hooks WooCommerce d'ajout au panier peut nécessiter la surcharge du gabarit.</td></tr>
+<tr><td>Le produit est toujours « en rupture »</td><td>La précommande doit être « En cours » (pas « Programmée » ni « Terminée »). Enregistrez à nouveau la précommande pour relancer l'application.</td></tr>
+<tr><td>Le prix n'est pas celui attendu</td><td>Le prix de précommande se calcule sur le prix <em>normal</em>. Vérifiez le mode (fixe / % / montant) et videz les caches (transients WooCommerce).</td></tr>
+<tr><td>La précommande ne se termine pas à l'heure</td><td>Sans visite ni cron, l'état ne change pas. Mettez en place le cron serveur (chapitre 13).</td></tr>
+<tr><td>Les e-mails n'arrivent pas</td><td>Utilisez « Envoyer un test ». Si le test échoue, configurez un plugin SMTP : le plugin utilise <code>wp_mail()</code>.</td></tr>
+<tr><td>Le bandeau n'est pas tout en haut</td><td>Le thème n'appelle probablement pas <code>wp_body_open</code> : le bandeau est déplacé par script. Vous pouvez aussi utiliser le shortcode.</td></tr>
+<tr><td>Le formulaire d'alerte répond « protection anti-spam »</td><td>Page servie depuis un cache plus d'un jour (jeton périmé) ou envoi en moins de 3 secondes : rechargez la page.</td></tr>
+<tr><td>« Mes précommandes » renvoie une page 404</td><td>Réglages → Permaliens → Enregistrer, pour régénérer les adresses.</td></tr>
+<tr><td>Le placement en barre latérale ne marche pas</td><td>Réservé aux thèmes classiques qui déclarent une zone de widgets « left / gauche » ou « right / droite / sidebar-1 ». Sinon, utilisez le widget, le bloc ou le shortcode.</td></tr>
+</table>
+
+<h2>19. Désinstallation et données</h2>
+<p>Par défaut, la suppression du plugin <strong>conserve</strong> vos données (règles, réservations, abonnés, réglages). Pour tout effacer, décochez « Conserver les données à la désinstallation » dans <em>Réglages → Général</em> <strong>avant</strong> de supprimer le plugin : les trois tables, les réglages, les e-mails personnalisés, la page liste créée par le plugin et la tâche planifiée sont alors supprimés. Les précommandes en cours sont restaurées (stock, prix) si vous les supprimez avant de désactiver le plugin.</p>
+<div class="warn">La désactivation du plugin ne restaure pas le stock des précommandes en cours : terminez-les ou supprimez-les d'abord.</div>
+<p>Support et accompagnement : contact@websource.fr · www.websource.fr</p>
+</body></html>

@@ -1,0 +1,13 @@
+.wspo-cards{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.wspo-card-a{background:#fff;border:1px solid #c3c4c7;border-left:4px solid #e8590c;padding:12px 18px;min-width:150px}
+.wspo-card-a b{display:block;font-size:28px;line-height:1.1}
+.wspo-card-a span{color:#50575e}
+.wspo-state{display:inline-block;padding:2px 8px;border-radius:3px;background:#eee;font-size:12px}
+.wspo-state-1{background:#d1f2dc;color:#14532d}
+.wspo-state-0{background:#fff1c2;color:#7a5200}
+.wspo-state-2{background:#e5e7eb;color:#374151}
+.wspo-filter{margin:12px 0}
+.wspo-addsub{background:#fff;border:1px solid #c3c4c7;padding:4px 16px 14px;margin:14px 0}
+.wspo-mail-box{background:#fff;border:1px solid #c3c4c7;padding:4px 16px 8px;margin:14px 0;max-width:900px}
+.wspo-pre{background:#1d2327;color:#f0f0f1;padding:10px;overflow:auto}
+.wspo-tabs{margin-bottom:16px}

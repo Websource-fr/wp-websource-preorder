@@ -1,0 +1,1250 @@
+# Copyright (C) 2026 Websource
+# Distribué sous la licence du plugin Websource Précommandes.
+msgid ""
+msgstr ""
+"Project-Id-Version: Websource Précommandes 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/Websource-fr/wp-websource-preorder/issues\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Domain: websource-preorder\n"
+
+#: websource-preorder.php:42
+msgid "Websource Précommandes nécessite WooCommerce. Le plugin est actif mais ne fait rien tant que WooCommerce n’est pas installé et activé."
+msgstr ""
+
+#: admin/class-wspo-admin.php:30 admin/class-wspo-admin.php:39 admin/class-wspo-admin.php:39
+msgid "Réglages"
+msgstr ""
+
+#: admin/class-wspo-admin.php:35 admin/class-wspo-admin.php:35 admin/class-wspo-admin.php:36
+msgid "Précommandes"
+msgstr ""
+
+#: admin/class-wspo-admin.php:37 admin/class-wspo-admin.php:37
+msgid "Réservations"
+msgstr ""
+
+#: admin/class-wspo-admin.php:38 admin/class-wspo-admin.php:112
+msgid "Abonnés aux alertes"
+msgstr ""
+
+#: admin/class-wspo-admin.php:38
+msgid "Abonnés"
+msgstr ""
+
+#: admin/class-wspo-admin.php:57
+msgid "Droits insuffisants."
+msgstr ""
+
+#: admin/class-wspo-admin.php:109
+msgid "Précommandes en cours"
+msgstr ""
+
+#: admin/class-wspo-admin.php:110
+msgid "Programmées"
+msgstr ""
+
+#: admin/class-wspo-admin.php:111
+msgid "Unités réservées"
+msgstr ""
+
+#: admin/class-wspo-admin.php:131 admin/class-wspo-admin.php:197
+msgid "Nouvelle précommande"
+msgstr ""
+
+#: admin/class-wspo-admin.php:136 admin/class-wspo-admin.php:360 templates/my-preorders.php:19
+msgid "Produit"
+msgstr ""
+
+#: admin/class-wspo-admin.php:136 admin/class-wspo-admin.php:360 admin/class-wspo-admin.php:448
+msgid "Statut"
+msgstr ""
+
+#: admin/class-wspo-admin.php:136
+msgid "Début"
+msgstr ""
+
+#: admin/class-wspo-admin.php:136 templates/my-preorders.php:22 templates/my-preorders.php:46
+msgid "Sortie"
+msgstr ""
+
+#: admin/class-wspo-admin.php:136
+msgid "Prix"
+msgstr ""
+
+#: admin/class-wspo-admin.php:136
+msgid "Réservé / quota"
+msgstr ""
+
+#: admin/class-wspo-admin.php:136 admin/class-wspo-admin.php:360 admin/class-wspo-admin.php:448
+msgid "Actions"
+msgstr ""
+
+#: admin/class-wspo-admin.php:138
+msgid "Aucune précommande. Cliquez sur « Nouvelle précommande » pour commencer."
+msgstr ""
+
+#: admin/class-wspo-admin.php:140 admin/class-wspo-admin.php:218
+msgid "Prix fixe"
+msgstr ""
+
+#: admin/class-wspo-admin.php:140 admin/class-wspo-admin.php:140
+msgid "Remise"
+msgstr ""
+
+#: admin/class-wspo-admin.php:143
+msgid "supprimé"
+msgstr ""
+
+#: admin/class-wspo-admin.php:147
+msgid "Désactivée"
+msgstr ""
+
+#: admin/class-wspo-admin.php:160
+msgid "Modifier"
+msgstr ""
+
+#: admin/class-wspo-admin.php:162
+msgid "Rendre le produit disponible maintenant et prévenir les acheteurs ?"
+msgstr ""
+
+#: admin/class-wspo-admin.php:162
+msgid "Disponible maintenant"
+msgstr ""
+
+#: admin/class-wspo-admin.php:164
+msgid "Supprimer cette précommande ?"
+msgstr ""
+
+#: admin/class-wspo-admin.php:164 admin/class-wspo-admin.php:460
+msgid "Supprimer"
+msgstr ""
+
+#: admin/class-wspo-admin.php:172
+msgid "Précommande introuvable."
+msgstr ""
+
+#: admin/class-wspo-admin.php:197
+msgid "Modifier la précommande"
+msgstr ""
+
+#: admin/class-wspo-admin.php:204
+msgid "Produit / déclinaison"
+msgstr ""
+
+#: admin/class-wspo-admin.php:205
+msgid "Rechercher un produit…"
+msgstr ""
+
+#: admin/class-wspo-admin.php:209
+msgid "Un produit variable = toutes ses déclinaisons ; choisissez une déclinaison pour ne cibler qu’elle."
+msgstr ""
+
+#: admin/class-wspo-admin.php:211
+msgid "Activée"
+msgstr ""
+
+#: admin/class-wspo-admin.php:211
+msgid "Une précommande désactivée n’est jamais appliquée."
+msgstr ""
+
+#: admin/class-wspo-admin.php:212
+msgid "Début des précommandes"
+msgstr ""
+
+#: admin/class-wspo-admin.php:212
+msgid "Vide = dès l’activation. Heure du site."
+msgstr ""
+
+#: admin/class-wspo-admin.php:213
+msgid "Date de sortie"
+msgstr ""
+
+#: admin/class-wspo-admin.php:213
+msgid "Obligatoire. Alimente le compte à rebours et l’e-mail « produit disponible »."
+msgstr ""
+
+#: admin/class-wspo-admin.php:214
+msgid "Clore automatiquement à la date de sortie"
+msgstr ""
+
+#: admin/class-wspo-admin.php:214
+msgid "Recommandé : la précommande s’arrête à la sortie, le stock et le prix d’origine sont restaurés."
+msgstr ""
+
+#: admin/class-wspo-admin.php:215
+msgid "Fin anticipée (optionnel)"
+msgstr ""
+
+#: admin/class-wspo-admin.php:215
+msgid "Clôture des ventes avant la sortie."
+msgstr ""
+
+#: admin/class-wspo-admin.php:217
+msgid "Prix de précommande"
+msgstr ""
+
+#: admin/class-wspo-admin.php:218
+msgid "Prix normal du produit"
+msgstr ""
+
+#: admin/class-wspo-admin.php:218
+msgid "Remise en pourcentage"
+msgstr ""
+
+#: admin/class-wspo-admin.php:218
+msgid "Remise en montant"
+msgstr ""
+
+#: admin/class-wspo-admin.php:222
+msgid "Appliqué dynamiquement sur le prix normal (le produit n’est jamais modifié). Montants saisis comme les prix de votre catalogue (HT ou TTC selon votre réglage WooCommerce)."
+msgstr ""
+
+#: admin/class-wspo-admin.php:224
+msgid "Quota total"
+msgstr ""
+
+#: admin/class-wspo-admin.php:224 admin/class-wspo-admin.php:225
+msgid "0 = illimité."
+msgstr ""
+
+#: admin/class-wspo-admin.php:225
+msgid "Maximum par commande"
+msgstr ""
+
+#: admin/class-wspo-admin.php:226
+msgid "Maximum par client"
+msgstr ""
+
+#: admin/class-wspo-admin.php:226
+msgid "0 = illimité. S’applique aux clients connectés."
+msgstr ""
+
+#: admin/class-wspo-admin.php:227
+msgid "Libellé personnalisé (badge et bouton)"
+msgstr ""
+
+#: admin/class-wspo-admin.php:227
+msgid "Vide = libellés des réglages."
+msgstr ""
+
+#: admin/class-wspo-admin.php:228
+msgid "Message sur la fiche produit"
+msgstr ""
+
+#: admin/class-wspo-admin.php:229
+msgid "Afficher dans les listes"
+msgstr ""
+
+#: admin/class-wspo-admin.php:229
+msgid "Page « Toutes les précommandes », bandeau, à la une, blocs de comptes et récapitulatif."
+msgstr ""
+
+#: admin/class-wspo-admin.php:231 admin/class-wspo-admin.php:799
+msgid "Enregistrer"
+msgstr ""
+
+#: admin/class-wspo-admin.php:231
+msgid "Créer la précommande"
+msgstr ""
+
+#: admin/class-wspo-admin.php:232
+msgid "← Retour à la liste"
+msgstr ""
+
+#: admin/class-wspo-admin.php:244 admin/class-wspo-admin.php:649 includes/class-wspo-front.php:314
+msgid "Oui"
+msgstr ""
+
+#: admin/class-wspo-admin.php:287
+msgid "Précommande enregistrée."
+msgstr ""
+
+#: admin/class-wspo-admin.php:296
+msgid "Précommande supprimée."
+msgstr ""
+
+#: admin/class-wspo-admin.php:300
+msgid "Le produit est disponible, les acheteurs ont été prévenus."
+msgstr ""
+
+#: admin/class-wspo-admin.php:346
+msgid "Réservations de précommande"
+msgstr ""
+
+#: admin/class-wspo-admin.php:349 includes/class-wspo-settings.php:67
+msgid "Toutes les précommandes"
+msgstr ""
+
+#: admin/class-wspo-admin.php:354
+msgid "Tous les statuts"
+msgstr ""
+
+#: admin/class-wspo-admin.php:354
+msgid "Actives"
+msgstr ""
+
+#: admin/class-wspo-admin.php:354
+msgid "Annulées"
+msgstr ""
+
+#: admin/class-wspo-admin.php:355
+msgid "Client, e-mail, n° commande"
+msgstr ""
+
+#: admin/class-wspo-admin.php:356
+msgid "Filtrer"
+msgstr ""
+
+#: admin/class-wspo-admin.php:358 admin/class-wspo-admin.php:440
+msgid "Exporter en CSV"
+msgstr ""
+
+#: admin/class-wspo-admin.php:360
+msgid "Date"
+msgstr ""
+
+#: admin/class-wspo-admin.php:360 templates/my-preorders.php:21 templates/my-preorders.php:45
+msgid "Commande"
+msgstr ""
+
+#: admin/class-wspo-admin.php:360
+msgid "Client"
+msgstr ""
+
+#: admin/class-wspo-admin.php:360 templates/my-preorders.php:20 templates/my-preorders.php:44
+msgid "Qté"
+msgstr ""
+
+#: admin/class-wspo-admin.php:362
+msgid "Aucune réservation."
+msgstr ""
+
+#: admin/class-wspo-admin.php:367 templates/my-preorders.php:33
+msgid "Annulée"
+msgstr ""
+
+#: admin/class-wspo-admin.php:367
+msgid "Prévenue"
+msgstr ""
+
+#: admin/class-wspo-admin.php:367
+msgid "Réservée"
+msgstr ""
+
+#: admin/class-wspo-admin.php:375
+msgid "Renvoyer l’e-mail « disponible »"
+msgstr ""
+
+#: admin/class-wspo-admin.php:375
+msgid "Annuler cette réservation et libérer le quota ?"
+msgstr ""
+
+#: admin/class-wspo-admin.php:375
+msgid "Annuler"
+msgstr ""
+
+#: admin/class-wspo-admin.php:394
+msgid "Réservation introuvable."
+msgstr ""
+
+#: admin/class-wspo-admin.php:398
+msgid "Réservation annulée, quota libéré."
+msgstr ""
+
+#: admin/class-wspo-admin.php:402
+msgid "E-mail envoyé."
+msgstr ""
+
+#: admin/class-wspo-admin.php:402
+msgid "Échec de l’envoi."
+msgstr ""
+
+#: admin/class-wspo-admin.php:436
+msgid "Abonnés aux alertes précommandes"
+msgstr ""
+
+#: admin/class-wspo-admin.php:438
+msgid "Rechercher une adresse"
+msgstr ""
+
+#: admin/class-wspo-admin.php:439
+msgid "Rechercher"
+msgstr ""
+
+#: admin/class-wspo-admin.php:444
+msgid "Ajouter un abonné"
+msgstr ""
+
+#: admin/class-wspo-admin.php:444
+msgid "Déjà confirmé (consentement recueilli)"
+msgstr ""
+
+#: admin/class-wspo-admin.php:445
+msgid "Ajouter"
+msgstr ""
+
+#: admin/class-wspo-admin.php:448
+msgid "E-mail"
+msgstr ""
+
+#: admin/class-wspo-admin.php:448
+msgid "Source"
+msgstr ""
+
+#: admin/class-wspo-admin.php:448
+msgid "Inscrit le"
+msgstr ""
+
+#: admin/class-wspo-admin.php:450
+msgid "Aucun abonné."
+msgstr ""
+
+#: admin/class-wspo-admin.php:456
+msgid "Confirmé"
+msgstr ""
+
+#: admin/class-wspo-admin.php:456
+msgid "En attente"
+msgstr ""
+
+#: admin/class-wspo-admin.php:458
+msgid "Confirmer"
+msgstr ""
+
+#: admin/class-wspo-admin.php:460
+msgid "Supprimer cet abonné ?"
+msgstr ""
+
+#: admin/class-wspo-admin.php:477
+msgid "Adresse invalide."
+msgstr ""
+
+#: admin/class-wspo-admin.php:477
+msgid "Cette adresse est déjà inscrite."
+msgstr ""
+
+#: admin/class-wspo-admin.php:477
+msgid "Erreur lors de l’ajout."
+msgstr ""
+
+#: admin/class-wspo-admin.php:481
+msgid "Abonné ajouté."
+msgstr ""
+
+#: admin/class-wspo-admin.php:487
+msgid "Abonné confirmé."
+msgstr ""
+
+#: admin/class-wspo-admin.php:491
+msgid "Abonné supprimé."
+msgstr ""
+
+#: admin/class-wspo-admin.php:511
+msgid "Général"
+msgstr ""
+
+#: admin/class-wspo-admin.php:512
+msgid "Compteur"
+msgstr ""
+
+#: admin/class-wspo-admin.php:513
+msgid "Couleurs"
+msgstr ""
+
+#: admin/class-wspo-admin.php:514
+msgid "Accueil & bandeau"
+msgstr ""
+
+#: admin/class-wspo-admin.php:515
+msgid "Blocs comptes"
+msgstr ""
+
+#: admin/class-wspo-admin.php:516
+msgid "Page liste"
+msgstr ""
+
+#: admin/class-wspo-admin.php:517
+msgid "Alertes"
+msgstr ""
+
+#: admin/class-wspo-admin.php:518
+msgid "Cron & récapitulatif"
+msgstr ""
+
+#: admin/class-wspo-admin.php:519
+msgid "E-mails"
+msgstr ""
+
+#: admin/class-wspo-admin.php:528
+msgid "Libellé du badge"
+msgstr ""
+
+#: admin/class-wspo-admin.php:528
+msgid "Affiché sur les vignettes et la fiche produit."
+msgstr ""
+
+#: admin/class-wspo-admin.php:529
+msgid "Libellé du bouton d’achat"
+msgstr ""
+
+#: admin/class-wspo-admin.php:529
+msgid "Remplace « Ajouter au panier »."
+msgstr ""
+
+#: admin/class-wspo-admin.php:530
+msgid "Afficher le badge"
+msgstr ""
+
+#: admin/class-wspo-admin.php:531
+msgid "Notice dans le panier et la commande"
+msgstr ""
+
+#: admin/class-wspo-admin.php:531
+msgid "Prévient le client que son panier contient des précommandes."
+msgstr ""
+
+#: admin/class-wspo-admin.php:532
+msgid "Mélange précommandes / produits en stock"
+msgstr ""
+
+#: admin/class-wspo-admin.php:532
+msgid "Autorisé"
+msgstr ""
+
+#: admin/class-wspo-admin.php:532
+msgid "Interdit dans un même panier"
+msgstr ""
+
+#: admin/class-wspo-admin.php:533
+msgid "E-mail de l’administrateur"
+msgstr ""
+
+#: admin/class-wspo-admin.php:533
+msgid "Destinataire des alertes de nouvelle précommande. Vide = e-mail du site."
+msgstr ""
+
+#: admin/class-wspo-admin.php:534
+msgid "Envoyer l’e-mail de précommande au client"
+msgstr ""
+
+#: admin/class-wspo-admin.php:535
+msgid "Prévenir l’administrateur à chaque précommande"
+msgstr ""
+
+#: admin/class-wspo-admin.php:536
+msgid "Envoyer l’e-mail « produit disponible » à la sortie"
+msgstr ""
+
+#: admin/class-wspo-admin.php:537
+msgid "Conserver les données à la désinstallation"
+msgstr ""
+
+#: admin/class-wspo-admin.php:537
+msgid "Décochez pour supprimer tables et réglages quand vous supprimez le plugin."
+msgstr ""
+
+#: admin/class-wspo-admin.php:540
+msgid "Afficher le compte à rebours"
+msgstr ""
+
+#: admin/class-wspo-admin.php:543
+msgid "Unités du compte à rebours"
+msgstr ""
+
+#: admin/class-wspo-admin.php:546
+msgid "Automatique (selon le temps restant)"
+msgstr ""
+
+#: admin/class-wspo-admin.php:547
+msgid "Jours"
+msgstr ""
+
+#: admin/class-wspo-admin.php:548
+msgid "Jours + heures"
+msgstr ""
+
+#: admin/class-wspo-admin.php:549
+msgid "Jours + heures + minutes"
+msgstr ""
+
+#: admin/class-wspo-admin.php:550
+msgid "Jours + heures + minutes + secondes"
+msgstr ""
+
+#: admin/class-wspo-admin.php:553
+msgid "Afficher la barre de progression"
+msgstr ""
+
+#: admin/class-wspo-admin.php:554
+msgid "Afficher la quantité restante"
+msgstr ""
+
+#: admin/class-wspo-admin.php:557
+msgid "Couleur principale"
+msgstr ""
+
+#: admin/class-wspo-admin.php:558
+msgid "Texte sur la couleur principale"
+msgstr ""
+
+#: admin/class-wspo-admin.php:559
+msgid "Fond du bloc"
+msgstr ""
+
+#: admin/class-wspo-admin.php:560
+msgid "Bordure du bloc"
+msgstr ""
+
+#: admin/class-wspo-admin.php:561
+msgid "Fond du compteur"
+msgstr ""
+
+#: admin/class-wspo-admin.php:562
+msgid "Texte du compteur"
+msgstr ""
+
+#: admin/class-wspo-admin.php:563
+msgid "Fond du badge"
+msgstr ""
+
+#: admin/class-wspo-admin.php:564
+msgid "Fond du bandeau"
+msgstr ""
+
+#: admin/class-wspo-admin.php:565
+msgid "Texte du bandeau"
+msgstr ""
+
+#: admin/class-wspo-admin.php:568
+msgid "Produit à la une en page d’accueil"
+msgstr ""
+
+#: admin/class-wspo-admin.php:568
+msgid "La précommande qui sort le plus tôt. Aussi disponible via le shortcode [websource_preorder_featured] et le bloc."
+msgstr ""
+
+#: admin/class-wspo-admin.php:569
+msgid "Titre du bloc à la une"
+msgstr ""
+
+#: admin/class-wspo-admin.php:570
+msgid "Activer le bandeau défilant"
+msgstr ""
+
+#: admin/class-wspo-admin.php:570
+msgid "Shortcode [websource_preorder_ticker] et bloc disponibles pour un placement manuel."
+msgstr ""
+
+#: admin/class-wspo-admin.php:571
+msgid "Emplacement du bandeau"
+msgstr ""
+
+#: admin/class-wspo-admin.php:571
+msgid "Tout en haut du site"
+msgstr ""
+
+#: admin/class-wspo-admin.php:571
+msgid "Avant le pied de page"
+msgstr ""
+
+#: admin/class-wspo-admin.php:571
+msgid "Haut de la page d’accueil"
+msgstr ""
+
+#: admin/class-wspo-admin.php:572
+msgid "Pages concernées"
+msgstr ""
+
+#: admin/class-wspo-admin.php:572
+msgid "Toutes les pages"
+msgstr ""
+
+#: admin/class-wspo-admin.php:572
+msgid "Accueil uniquement"
+msgstr ""
+
+#: admin/class-wspo-admin.php:573
+msgid "Vitesse (pixels par seconde)"
+msgstr ""
+
+#: admin/class-wspo-admin.php:573
+msgid "Entre 10 et 300. Désactivée si le visiteur demande « moins d’animations »."
+msgstr ""
+
+#: admin/class-wspo-admin.php:574
+msgid "Nombre maximum de produits"
+msgstr ""
+
+#: admin/class-wspo-admin.php:575 admin/class-wspo-admin.php:582 admin/class-wspo-admin.php:589
+msgid "Texte d’introduction"
+msgstr ""
+
+#: admin/class-wspo-admin.php:578
+msgid "Page de connexion"
+msgstr ""
+
+#: admin/class-wspo-admin.php:578
+msgid "Mon compte WooCommerce et wp-login.php."
+msgstr ""
+
+#: admin/class-wspo-admin.php:579
+msgid "Page d’inscription"
+msgstr ""
+
+#: admin/class-wspo-admin.php:579
+msgid "Sur Mon compte WooCommerce, connexion et inscription partagent la même page : le bloc n’y apparaît qu’une fois."
+msgstr ""
+
+#: admin/class-wspo-admin.php:580
+msgid "Page mot de passe perdu"
+msgstr ""
+
+#: admin/class-wspo-admin.php:581
+msgid "Titre du bloc"
+msgstr ""
+
+#: admin/class-wspo-admin.php:583
+msgid "Nombre de produits affichés"
+msgstr ""
+
+#: admin/class-wspo-admin.php:583
+msgid "0 = aucun produit."
+msgstr ""
+
+#: admin/class-wspo-admin.php:584
+msgid "Afficher le formulaire d’alerte"
+msgstr ""
+
+#: admin/class-wspo-admin.php:587
+msgid "Adresse (slug) de la page"
+msgstr ""
+
+#: admin/class-wspo-admin.php:587
+msgid "La page est créée automatiquement avec le shortcode [websource_preorders]."
+msgstr ""
+
+#: admin/class-wspo-admin.php:588
+msgid "Titre de la page"
+msgstr ""
+
+#: admin/class-wspo-admin.php:590
+msgid "Regroupement"
+msgstr ""
+
+#: admin/class-wspo-admin.php:590
+msgid "Par mois de sortie"
+msgstr ""
+
+#: admin/class-wspo-admin.php:590
+msgid "Aucun"
+msgstr ""
+
+#: admin/class-wspo-admin.php:593
+msgid "Titre du formulaire"
+msgstr ""
+
+#: admin/class-wspo-admin.php:595
+msgid "Texte de la case RGPD"
+msgstr ""
+
+#: admin/class-wspo-admin.php:596
+msgid "Double opt-in (e-mail de confirmation)"
+msgstr ""
+
+#: admin/class-wspo-admin.php:597
+msgid "Afficher en pied de page"
+msgstr ""
+
+#: admin/class-wspo-admin.php:598
+msgid "Afficher sur l’accueil"
+msgstr ""
+
+#: admin/class-wspo-admin.php:599
+msgid "Afficher sur la fiche produit"
+msgstr ""
+
+#: admin/class-wspo-admin.php:600
+msgid "Barre latérale gauche"
+msgstr ""
+
+#: admin/class-wspo-admin.php:600
+msgid "Thèmes classiques dont la zone de widgets porte « left » / « gauche » dans son identifiant."
+msgstr ""
+
+#: admin/class-wspo-admin.php:601
+msgid "Barre latérale droite"
+msgstr ""
+
+#: admin/class-wspo-admin.php:601
+msgid "Thèmes classiques : zone « right », « droite » ou barre latérale principale. Vous pouvez aussi utiliser le widget « Alertes précommandes », le shortcode [websource_preorder_subscribe] ou le bloc."
+msgstr ""
+
+#: admin/class-wspo-admin.php:604
+msgid "Activer le récapitulatif périodique"
+msgstr ""
+
+#: admin/class-wspo-admin.php:605
+msgid "Nombre d’envois"
+msgstr ""
+
+#: admin/class-wspo-admin.php:605
+msgid "Ex. 2 fois par semaine."
+msgstr ""
+
+#: admin/class-wspo-admin.php:606
+msgid "Par"
+msgstr ""
+
+#: admin/class-wspo-admin.php:606
+msgid "Jour"
+msgstr ""
+
+#: admin/class-wspo-admin.php:606
+msgid "Semaine"
+msgstr ""
+
+#: admin/class-wspo-admin.php:606
+msgid "Mois"
+msgstr ""
+
+#: admin/class-wspo-admin.php:607
+msgid "Contenu"
+msgstr ""
+
+#: admin/class-wspo-admin.php:607
+msgid "Toutes les précommandes ouvertes"
+msgstr ""
+
+#: admin/class-wspo-admin.php:607
+msgid "Seulement les nouveautés depuis le dernier envoi"
+msgstr ""
+
+#: admin/class-wspo-admin.php:608
+msgid "Nombre maximum de produits par e-mail"
+msgstr ""
+
+#: admin/class-wspo-admin.php:608
+msgid "0 = tous."
+msgstr ""
+
+#: admin/class-wspo-admin.php:622
+msgid "Précommandes : réglages"
+msgstr ""
+
+#: admin/class-wspo-admin.php:677
+msgid "Adresse publique actuelle :"
+msgstr ""
+
+#: admin/class-wspo-admin.php:680
+msgid "Shortcode : [websource_preorder_subscribe title=\"…\" text=\"…\"]"
+msgstr ""
+
+#: admin/class-wspo-admin.php:692
+msgid "Tâche planifiée"
+msgstr ""
+
+#: admin/class-wspo-admin.php:693
+msgid "WP-Cron vérifie les précommandes et envoie le récapitulatif toutes les 5 minutes (lorsque le site reçoit des visites)."
+msgstr ""
+
+#: admin/class-wspo-admin.php:694
+msgid "Prochain passage WP-Cron :"
+msgstr ""
+
+#: admin/class-wspo-admin.php:695
+msgid "Vrai cron serveur (recommandé)"
+msgstr ""
+
+#: admin/class-wspo-admin.php:695
+msgid "Ajoutez cette ligne à votre crontab, et définissez DISABLE_WP_CRON à true dans wp-config.php :"
+msgstr ""
+
+#: admin/class-wspo-admin.php:697
+msgid "Dernier récapitulatif complet :"
+msgstr ""
+
+#: admin/class-wspo-admin.php:698
+msgid "Envoyer le récapitulatif maintenant"
+msgstr ""
+
+#: admin/class-wspo-admin.php:699
+msgid "Régénérer le jeton ? L’ancienne adresse de cron cessera de fonctionner."
+msgstr ""
+
+#: admin/class-wspo-admin.php:699
+msgid "Régénérer le jeton"
+msgstr ""
+
+#: admin/class-wspo-admin.php:706
+msgid "Aucune précommande ouverte : rien n’a été envoyé."
+msgstr ""
+
+#: admin/class-wspo-admin.php:707
+msgid "Récapitulatif envoyé."
+msgstr ""
+
+#: admin/class-wspo-admin.php:708
+msgid "Lot envoyé, la suite partira au prochain passage du cron."
+msgstr ""
+
+#: admin/class-wspo-admin.php:717
+msgid "Jeton régénéré."
+msgstr ""
+
+#: admin/class-wspo-admin.php:767
+msgid "Réglages enregistrés."
+msgstr ""
+
+#: admin/class-wspo-admin.php:783
+msgid "Langue / locale :"
+msgstr ""
+
+#: admin/class-wspo-admin.php:788
+msgid "Laissez un champ vide pour revenir au texte par défaut. L’enveloppe HTML reprend la couleur principale de vos réglages."
+msgstr ""
+
+#: admin/class-wspo-admin.php:796
+msgid "Objet"
+msgstr ""
+
+#: admin/class-wspo-admin.php:797
+msgid "Corps (HTML)"
+msgstr ""
+
+#: admin/class-wspo-admin.php:798
+msgid "Variables :"
+msgstr ""
+
+#: admin/class-wspo-admin.php:800
+msgid "Envoyer un test à"
+msgstr ""
+
+#: admin/class-wspo-admin.php:832
+msgid "E-mail enregistré."
+msgstr ""
+
+#: admin/class-wspo-admin.php:844 admin/class-wspo-admin.php:852
+msgid "Produit d’exemple"
+msgstr ""
+
+#: admin/class-wspo-admin.php:844 includes/class-wspo-service.php:654
+msgid "Sortie prévue le"
+msgstr ""
+
+#: admin/class-wspo-admin.php:851 includes/class-wspo-service.php:672
+msgid "Date de sortie prévue : %s."
+msgstr ""
+
+#: admin/class-wspo-admin.php:862
+msgid "E-mail de test envoyé à %s."
+msgstr ""
+
+#: admin/class-wspo-admin.php:862
+msgid "Échec de l’envoi du test (vérifiez la configuration e-mail du site)."
+msgstr ""
+
+#: admin/class-wspo-support-box.php:75
+msgid "Besoin d’aller plus loin ?"
+msgstr ""
+
+#: admin/class-wspo-support-box.php:76
+msgid "Masquer"
+msgstr ""
+
+#: admin/class-wspo-support-box.php:79
+msgid "Websource, l’agence éditrice de ce plugin, peut vous accompagner plus en profondeur : personnalisation sur mesure, adaptation à votre thème, développements spécifiques. Parlons de votre besoin."
+msgstr ""
+
+#: admin/class-wspo-support-box.php:81
+msgid "Nous contacter"
+msgstr ""
+
+#: admin/class-wspo-support-box.php:82
+msgid "Prendre rendez-vous"
+msgstr ""
+
+#: admin/class-wspo-support-box.php:84
+msgid "En cliquant, le nom du plugin et l’adresse de votre site sont transmis à Websource pour faciliter notre réponse."
+msgstr ""
+
+#: templates/featured.php:30 templates/list.php:38 templates/product-box.php:25
+msgid "Sortie prévue le %s"
+msgstr ""
+
+#: templates/featured.php:42 templates/list.php:46
+msgid "Il reste %d exemplaire."
+msgid_plural "Il reste %d exemplaires."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/list.php:19
+msgid "Aucune précommande n’est ouverte pour le moment."
+msgstr ""
+
+#: templates/my-preorders.php:12 includes/class-wspo-front.php:64 includes/class-wspo-front.php:606
+msgid "Mes précommandes"
+msgstr ""
+
+#: templates/my-preorders.php:14
+msgid "Vous n’avez aucune précommande."
+msgstr ""
+
+#: templates/my-preorders.php:35 templates/my-preorders.php:37
+msgid "Disponible"
+msgstr ""
+
+#: templates/my-preorders.php:39
+msgid "En attente de sortie"
+msgstr ""
+
+#: templates/product-box.php:39
+msgid "Il reste %d exemplaire en précommande."
+msgid_plural "Il reste %d exemplaires en précommande."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/subscribe-form.php:32 templates/subscribe-form.php:34
+msgid "Votre adresse e-mail"
+msgstr ""
+
+#: templates/subscribe-form.php:35
+msgid "Me prévenir"
+msgstr ""
+
+#: templates/ticker.php:27
+msgid "Produits en précommande"
+msgstr ""
+
+#: includes/class-wspo-cart.php:51
+msgid "« %s » : les précommandes sont complètes, il n’y a plus de place disponible."
+msgstr ""
+
+#: includes/class-wspo-cart.php:59
+msgid "« %1$s » : maximum %2$d par commande."
+msgstr ""
+
+#: includes/class-wspo-cart.php:67
+msgid "« %1$s » : maximum %2$d par client (vous en avez déjà précommandé %3$d)."
+msgstr ""
+
+#: includes/class-wspo-cart.php:70
+msgid "« %1$s » : maximum %2$d par client."
+msgstr ""
+
+#: includes/class-wspo-cart.php:77
+msgid "Les précommandes doivent être commandées séparément des produits en stock. Videz ou finalisez d’abord votre panier actuel."
+msgstr ""
+
+#: includes/class-wspo-cart.php:54
+msgid "« %1$s » : il ne reste que %2$d exemplaire disponible en précommande."
+msgid_plural "« %1$s » : il ne reste que %2$d exemplaires disponibles en précommande."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wspo-front.php:94
+msgid "Disponible maintenant !"
+msgstr ""
+
+#: includes/class-wspo-front.php:96
+msgid "jour"
+msgstr ""
+
+#: includes/class-wspo-front.php:96
+msgid "jours"
+msgstr ""
+
+#: includes/class-wspo-front.php:97
+msgid "heure"
+msgstr ""
+
+#: includes/class-wspo-front.php:97
+msgid "heures"
+msgstr ""
+
+#: includes/class-wspo-front.php:98
+msgid "minute"
+msgstr ""
+
+#: includes/class-wspo-front.php:98
+msgid "minutes"
+msgstr ""
+
+#: includes/class-wspo-front.php:99
+msgid "seconde"
+msgstr ""
+
+#: includes/class-wspo-front.php:99
+msgid "secondes"
+msgstr ""
+
+#: includes/class-wspo-front.php:313 includes/class-wspo-service.php:531 includes/class-wspo-settings.php:22
+msgid "Précommande"
+msgstr ""
+
+#: includes/class-wspo-front.php:336
+msgid "Votre panier contient des précommandes : elles seront expédiées à leur date de sortie."
+msgstr ""
+
+#: includes/class-wspo-front.php:339
+msgid "Prochaine sortie prévue le %s."
+msgstr ""
+
+#: includes/class-wspo-front.php:513
+msgid "Merci ! Consultez votre boîte mail pour confirmer votre inscription."
+msgstr ""
+
+#: includes/class-wspo-front.php:514
+msgid "Merci, votre inscription est enregistrée."
+msgstr ""
+
+#: includes/class-wspo-front.php:515
+msgid "Cette adresse est déjà inscrite aux alertes."
+msgstr ""
+
+#: includes/class-wspo-front.php:516
+msgid "Adresse e-mail invalide."
+msgstr ""
+
+#: includes/class-wspo-front.php:517
+msgid "Merci de cocher la case de consentement."
+msgstr ""
+
+#: includes/class-wspo-front.php:518
+msgid "Envoi refusé (protection anti-spam). Réessayez dans quelques secondes."
+msgstr ""
+
+#: includes/class-wspo-front.php:519
+msgid "Une erreur est survenue, veuillez réessayer."
+msgstr ""
+
+#: includes/class-wspo-front.php:547
+msgid "Date à venir"
+msgstr ""
+
+#: includes/class-wspo-install.php:134
+msgid "Toutes les 5 minutes (Websource Précommandes)"
+msgstr ""
+
+#: includes/class-wspo-mail.php:29
+msgid "Commande de précommande (client)"
+msgstr ""
+
+#: includes/class-wspo-mail.php:30
+msgid "Produit disponible (client)"
+msgstr ""
+
+#: includes/class-wspo-mail.php:31
+msgid "Nouvelle précommande (administrateur)"
+msgstr ""
+
+#: includes/class-wspo-mail.php:32
+msgid "Confirmation d’inscription aux alertes"
+msgstr ""
+
+#: includes/class-wspo-mail.php:33
+msgid "Récapitulatif périodique"
+msgstr ""
+
+#: includes/class-wspo-service.php:87
+msgid "Programmée"
+msgstr ""
+
+#: includes/class-wspo-service.php:88
+msgid "En cours"
+msgstr ""
+
+#: includes/class-wspo-service.php:89
+msgid "Terminée"
+msgstr ""
+
+#: includes/class-wspo-service.php:170
+msgid "Choisissez un produit."
+msgstr ""
+
+#: includes/class-wspo-service.php:173
+msgid "La date de sortie est obligatoire."
+msgstr ""
+
+#: includes/class-wspo-service.php:184
+msgid "Une précommande non terminée existe déjà pour ce produit / cette déclinaison."
+msgstr ""
+
+#: includes/class-wspo-settings.php:23
+msgid "Précommander"
+msgstr ""
+
+#: includes/class-wspo-settings.php:49
+msgid "À ne pas manquer : en précommande"
+msgstr ""
+
+#: includes/class-wspo-settings.php:55
+msgid "Précommandes ouvertes :"
+msgstr ""
+
+#: includes/class-wspo-settings.php:60
+msgid "Bientôt disponibles en précommande"
+msgstr ""
+
+#: includes/class-wspo-settings.php:61
+msgid "Recevez une alerte e-mail dès qu’une nouvelle précommande est ouverte."
+msgstr ""
+
+#: includes/class-wspo-settings.php:68
+msgid "Réservez dès maintenant les produits avant leur sortie officielle."
+msgstr ""
+
+#: includes/class-wspo-settings.php:71
+msgid "Alertes précommandes"
+msgstr ""
+
+#: includes/class-wspo-settings.php:72
+msgid "Soyez prévenu par e-mail des prochaines précommandes."
+msgstr ""
+
+#: includes/class-wspo-settings.php:73
+msgid "J’accepte de recevoir des e-mails d’information sur les précommandes et je peux me désinscrire à tout moment."
+msgstr ""
+
+#: includes/class-wspo-subscribers.php:168
+msgid "Inscription aux alertes"
+msgstr ""
+
+#: includes/class-wspo-subscribers.php:171
+msgid "Merci, votre inscription aux alertes précommandes est confirmée."
+msgstr ""
+
+#: includes/class-wspo-subscribers.php:173
+msgid "Ce lien de confirmation n’est plus valide."
+msgstr ""
+
+#: includes/class-wspo-subscribers.php:176
+msgid "Désinscription"
+msgstr ""
+
+#: includes/class-wspo-subscribers.php:179
+msgid "Vous êtes désinscrit des alertes précommandes. Vous ne recevrez plus d’e-mails."
+msgstr ""
+
+#: includes/class-wspo-subscribers.php:181
+msgid "Cette adresse n’est plus inscrite aux alertes."
+msgstr ""
+
+#: includes/class-wspo-subscribers.php:185
+msgid "Retour à la boutique"
+msgstr ""
+
+#: includes/class-wspo-widget.php:15
+msgid "Alertes précommandes (Websource)"
+msgstr ""
+
+#: includes/class-wspo-widget.php:15
+msgid "Formulaire d’inscription aux alertes e-mail de précommandes."
+msgstr ""
+
+#: includes/class-wspo-widget.php:25
+msgid "Les textes se règlent dans Précommandes > Réglages > Alertes."
+msgstr ""

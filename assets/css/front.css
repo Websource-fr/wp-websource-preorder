@@ -1,0 +1,67 @@
+/* Websource Précommandes - styles front. Couleurs pilotées par les variables CSS (Réglages > Couleurs). */
+.wspo-badge{display:inline-block;background:var(--wspo-badge-bg,#e8590c);color:var(--wspo-on-accent,#fff);font-size:.78em;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.04em;padding:.45em .7em;border-radius:3px}
+.wspo-badge--loop{position:absolute;top:8px;left:8px;z-index:9}
+li.product,.wc-block-grid__product,.wp-block-woocommerce-product-image,.wspo-card{position:relative}
+.wspo-box{background:var(--wspo-box-bg,#fff7ed);border:1px solid var(--wspo-border,#fdba74);border-left:4px solid var(--wspo-accent,#e8590c);border-radius:4px;padding:14px 16px;margin:12px 0 16px}
+.wspo-box p{margin:.5em 0}
+.wspo-box__release{margin-top:.7em}
+.wspo-box__quota{font-size:.9em;opacity:.85}
+.wspo-countdown{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.wspo-cd-u{background:var(--wspo-count-bg,#1f2937);color:var(--wspo-count-text,#fff);border-radius:4px;min-width:62px;padding:8px 6px;text-align:center;line-height:1.1}
+.wspo-cd-u b{display:block;font-size:1.5em;font-variant-numeric:tabular-nums}
+.wspo-cd-u small{font-size:.7em;opacity:.85}
+.wspo-countdown--done{background:var(--wspo-count-bg,#1f2937);color:var(--wspo-count-text,#fff);padding:8px 12px;border-radius:4px;font-weight:700}
+.wspo-progress{height:8px;background:rgba(0,0,0,.12);border-radius:4px;overflow:hidden;margin:10px 0}
+.wspo-progress span{display:block;height:100%;background:var(--wspo-accent,#e8590c)}
+.wspo-button,.wspo-sub button.wspo-button{display:inline-block;background:var(--wspo-accent,#e8590c);color:var(--wspo-on-accent,#fff);border:0;border-radius:4px;padding:.65em 1.2em;font-weight:600;text-decoration:none;cursor:pointer;line-height:1.3}
+.wspo-button:hover{opacity:.9;color:var(--wspo-on-accent,#fff)}
+.wspo-cart-notice{background:var(--wspo-box-bg,#fff7ed);border:1px solid var(--wspo-border,#fdba74);border-left:4px solid var(--wspo-accent,#e8590c);padding:10px 14px;margin:0 0 16px;border-radius:4px}
+/* Bandeau défilant */
+.wspo-ticker{background:var(--wspo-ticker-bg,#1f2937);color:var(--wspo-ticker-text,#fff);overflow:hidden;white-space:nowrap;font-size:14px;line-height:1;width:100%;position:relative;z-index:50}
+.wspo-ticker__track{display:inline-flex;min-width:max-content;animation:wspo-scroll var(--wspo-duration,30s) linear infinite;padding:10px 0}
+.wspo-ticker:hover .wspo-ticker__track{animation-play-state:paused}
+.wspo-ticker__group{display:inline-flex;align-items:center;gap:36px;padding-right:36px}
+.wspo-ticker__prefix{font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.wspo-ticker a{color:var(--wspo-ticker-text,#fff);text-decoration:none}
+.wspo-ticker a:hover{text-decoration:underline}
+.wspo-ticker__date{opacity:.75;margin-left:.4em}
+@keyframes wspo-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.wspo-ticker{white-space:normal}.wspo-ticker__track{animation:none;display:block;min-width:0;padding:10px 12px}.wspo-ticker__group{flex-wrap:wrap;gap:8px 24px;padding-right:0}.wspo-ticker__group[aria-hidden="true"]{display:none}}
+/* À la une */
+.wspo-featured{max-width:1100px;margin:24px auto;padding:0 16px}
+.wspo-featured__title{margin:0 0 14px}
+.wspo-featured__body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:24px;background:var(--wspo-box-bg,#fff7ed);border:1px solid var(--wspo-border,#fdba74);border-radius:6px;padding:20px;align-items:center}
+.wspo-featured__image img{width:100%;height:auto;border-radius:4px;display:block}
+.wspo-featured__info h3{margin:.4em 0}
+@media (max-width:640px){.wspo-featured__body{grid-template-columns:1fr}}
+/* Liste */
+.wspo-list__month{margin:1.6em 0 .6em;border-bottom:2px solid var(--wspo-accent,#e8590c);padding-bottom:.2em}
+.wspo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.wspo-card{border:1px solid var(--wspo-border,#fdba74);border-radius:6px;padding:12px;background:#fff;display:flex;flex-direction:column;gap:6px}
+.wspo-card__image img{width:100%;height:auto;display:block;border-radius:4px}
+.wspo-card__title{font-size:1.05em;margin:.3em 0 0}
+.wspo-card p{margin:.2em 0}
+.wspo-card .wspo-button{margin-top:auto;text-align:center}
+/* Alertes */
+.wspo-sub{background:var(--wspo-box-bg,#fff7ed);border:1px solid var(--wspo-border,#fdba74);border-radius:6px;padding:16px;margin:16px 0}
+.wspo-sub__title{margin:0 0 .3em}
+.wspo-sub__row{display:flex;gap:8px;flex-wrap:wrap}
+.wspo-sub__row input[type=email]{flex:1 1 200px;min-width:0;padding:.6em .8em;border:1px solid #bbb;border-radius:4px}
+.wspo-sub__consent{display:flex;gap:8px;align-items:flex-start;font-size:.82em;margin-top:8px}
+.wspo-sub__hp{position:absolute!important;left:-9999px!important;height:0;overflow:hidden}
+.wspo-sub__msg{padding:8px 10px;border-radius:4px;margin:8px 0;font-size:.92em}
+.wspo-sub__msg--ok{background:#e7f6ec;color:#14532d}
+.wspo-sub__msg--err{background:#fdecec;color:#7f1d1d}
+.wspo-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wspo-footer-sub{max-width:720px;margin:0 auto;padding:0 16px}
+/* Pages de compte */
+.wspo-account{background:var(--wspo-box-bg,#fff7ed);border:1px solid var(--wspo-border,#fdba74);border-radius:6px;padding:16px;margin:0 0 20px}
+.wspo-account__title{margin-top:0}
+.wspo-account__list{margin:.5em 0 1em 1.2em}
+.wspo-account__date{opacity:.7;margin-left:.4em;font-size:.9em}
+.wspo-account .wspo-sub{border:0;padding:0;background:none;margin:8px 0 0}
+.login .wspo-account{margin:0 0 16px;box-sizing:border-box}
+.login .wspo-sub__row{flex-direction:column}
+.login .wspo-sub form,.wspo-account .wspo-sub form{margin:0;padding:0;border:0;box-shadow:none;background:none}
+.login .wspo-sub__row input[type=email]{flex:none;width:100%;height:auto;min-height:0;box-sizing:border-box}
+.wspo-sub__row input[type=email]{box-sizing:border-box}
